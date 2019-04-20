@@ -32,3 +32,100 @@ el6.centos 适合的Linux平台
 i686       适合的硬件平台
 rpm        rpm包扩展名
 ```
+
+#### 7.RPM包模块依赖查询网站：www.rpmfind.net
+
+#### 8.RPM包管理方式：rpm命令管理与yum在线管理
+
+#### 9.包全名与包名
+* 包全名：操作的包是没有安装的软件包时，使用包全名，而且要注意路径。
+* 包名：操作已经安装的软件包时，使用包名。是搜索/var/lib/rpm/中的数据库
+
+#### 10.RPM包的安装命令
+```
+语法：rpm -ivh 包全名
+-i(install)      安装
+-v(verbose)      显示详细信息
+-h(hash)         显示进度
+--nodeps         不检测依赖性
+```
+
+#### 11.RPM包的升级命令
+```
+语法：rpm -Uvh 包全名
+-U(upgrade)      升级
+```
+
+#### 12.RPM包的卸载命令
+```
+语法：rpm -e 包名
+-e(erase)      卸载
+--nodeps         不检测依赖性
+```
+
+#### 13.查询RPM包是否安装
+```
+语法：rpm -q 包名
+-q(query)      查询
+```
+
+#### 14.查询所有已安装的RPM包
+```
+语法：rpm -qa 
+-a(all)   
+```
+
+#### 15.查询软件包详细信息
+```
+语法：rpm -qi 包名
+-i(information)    查询软件信息
+-p(package)        查询未安装包信息
+```
+
+#### 16.查询软件包中文件安装位置
+```
+语法：rpm -ql 包名
+-l(list)           列表
+-p(package)        查询未安装包信息
+```
+
+#### 17.查询系统文件属于哪个RPM包
+```
+语法：rpm -qf 系统文件名
+-f(file)          
+```
+
+#### 18.查询RPM包的依赖性
+```
+语法：rpm -qR 包名
+-R(requires)  
+-p(package)        查询未安装包信息
+```
+
+#### 19.校验RPM包的是否发生更改
+```
+语法：rpm -V 已安装的包名
+-V(verify)  校验指定RPM包中的文件
+```
+
+#### 20.重启网络服务命令：service network restart
+* 要保证网卡已开启，可通过查看配置文件/etc/sysconfig/network-scripts/ifcfg-eth0中的ONBOOT属性是否设置为“yes”，若不是，则修改为“ONBOOT=yes”。
+
+#### 21.查询yum源服务器上所有可用软件包列表命令：yum list
+
+#### 22.搜索yum源服务器上所有和关键字相关的包命令：yum search <关键字>
+
+#### 23.使用yum安装软件包的命令：yum -y install <要安装的软件包>
+
+#### 24.使用yum升级软件包的命令：yum -y update <要安装的软件包>
+* 注：yum -y update表示升级所有的软件包，包括linux内核，此命令慎用。
+
+#### 25.使用yum卸载软件包的命令：yum -y remove <要安装的软件包>
+* 注：此命令慎用，一般也不要采用yum方式卸载软件
+
+
+
+
+
+
+
